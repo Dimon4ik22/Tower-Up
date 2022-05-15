@@ -99,6 +99,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77d3c780d7770d9499e5698e6233bab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Gold_Effect_Right: -10
+  Population_Effect_Right: -2
+  Gold_Effect_Left: 140
+  Population_Effect_Left: 1
+  mainscript: {fileID: 0}
 --- !u!61 &7390883457115341354
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -123,7 +128,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.4, y: 3.36}
+  m_Size: {x: 4.8, y: 6.74}
   m_EdgeRadius: 0
 --- !u!50 &5895471913827920151
 Rigidbody2D:
