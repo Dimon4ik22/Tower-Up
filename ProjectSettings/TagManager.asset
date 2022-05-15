@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Left_Choice
+  - Right_Choice
+  - Card
+  - Game_Panel
   layers:
   - Default
   - TransparentFX
