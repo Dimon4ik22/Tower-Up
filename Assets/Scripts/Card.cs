@@ -8,6 +8,8 @@ public class Card : MonoBehaviour
     public float Population_Effect_Right;
     public float Gold_Effect_Left;
     public float Population_Effect_Left;
+    public string Right_Desc;
+    public string Left_Desc;
     private Game mainscript;
     private GameObject mainpanel;
     private GameObject SelectedCard;
@@ -24,6 +26,7 @@ public class Card : MonoBehaviour
         mainscript = mainpanel.GetComponent<Game>();
     }
 
+    //счётчики коллизии.
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == "Left_Choice")
@@ -36,20 +39,22 @@ public class Card : MonoBehaviour
         }
     }
 
+    //счётчики ухода с коллизии.
     void OnCollisionExit2D(Collision2D col)
     {
         if (col.gameObject.tag == "Left_Choice")
         {
-            left_choice_count += 1;
+            left_choice_count -= 1;
         }
         else if (col.gameObject.tag == "Right_Choice")
         {
-            right_choice_count += 1;
+            right_choice_count -= 1;
         }
     }
 
     void Update()
     {
+        //"хватание" карты.
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (Input.GetButtonDown("Fire1"))
         {
@@ -61,12 +66,35 @@ public class Card : MonoBehaviour
             }
         }
 
+        //перемещение карты за курсором.
         if (SelectedCard)
         {
             SelectedCard.transform.localScale = new Vector3((float)0.4, (float)0.4, (float)1);
             SelectedCard.transform.position = mousePosition + offset;
             SelectedCard.transform.rotation = Quaternion.Euler(0, 0, SelectedCard.transform.position.x * 5);
         }
+
+        //отображение описания.
+        if (left_choice_count >= 1)
+        {
+            mainscript.ShowLeft(Left_Desc, true);
+        }
+        if (right_choice_count >= 1)
+        {
+            mainscript.ShowRight(Right_Desc, true);
+        }
+
+        //скрытие описания.
+        if (left_choice_count <= 0)
+        {
+            mainscript.ShowLeft(Left_Desc, false);
+        }
+        if (right_choice_count <= 0)
+        {
+            mainscript.ShowRight(Right_Desc, false);
+        }
+
+        //действия при "отпускании" карты.
         if (Input.GetButtonUp("Fire1") && SelectedCard)
         {
             if (left_choice_count >= 1)
@@ -74,13 +102,15 @@ public class Card : MonoBehaviour
                 Debug.Log("So you have chosen Left!");
                 mainscript.ChangeGold(Gold_Effect_Left);
                 mainscript.ChangePopulation(Population_Effect_Left);
-                Destroy(this.gameObject);
+                mainscript.ShowLeft(Left_Desc, false);
+                Destroy(SelectedCard);
             }
             else if (right_choice_count >= 1)
             {
                 Debug.Log("So you have chosen Right!");
                 mainscript.ChangeGold(Gold_Effect_Right);
                 mainscript.ChangePopulation(Population_Effect_Right);
+                mainscript.ShowRight(Right_Desc, false);
                 Destroy(SelectedCard);
             }
             else
@@ -89,6 +119,8 @@ public class Card : MonoBehaviour
             }
         }
     }
+
+    //возвращение карты в нули.
     IEnumerator CardReturn()
     {
         while (SelectedCard.transform.position != startpoint)

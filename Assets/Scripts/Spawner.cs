@@ -9,18 +9,21 @@ public class Spawner : MonoBehaviour
     public int TborderDown;
     private int timer;
     private GameObject ExCard;
-    // Start is called before the first frame update
+
     void Start()
     {
+        //таймер спавна новой карты с нижней и верхней границей.
         timer = Random.Range(TborderDown, TborderUp);
     }
 
-    // Update is called once per frame
+
     void Update()
     {
+        //поиск карты
       ExCard = GameObject.FindWithTag("Card");
         if (ExCard == null)
         {
+            //если карты нет - запускается таймер, по итогу которого - спавнится карта.
             timer -= 1;
             if (timer <= 0)
             {
