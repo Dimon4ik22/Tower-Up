@@ -626,8 +626,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cards:
   - {fileID: 7390883457115341353, guid: 62bc7852d9bc0354180603fbacce30ce, type: 3}
-  TborderUp: 100
-  TborderDown: 400
+  TborderUp: 1
+  TborderDown: 4
 --- !u!1 &661860254
 GameObject:
   m_ObjectHideFlags: 0
