@@ -18,12 +18,14 @@ public class Card : MonoBehaviour
     private Vector3 startpoint;
     private Vector3 offset;
     private Vector3 cardpoint;
+    private Rigidbody2D rb;
 
     void Start()
     {
         startpoint = new Vector3(0, 0, 0);
         mainpanel = GameObject.FindWithTag("Game_Panel");
         mainscript = mainpanel.GetComponent<Game>();
+        rb = this.gameObject.GetComponent<Rigidbody2D>();
     }
 
     //счётчики коллизии.
@@ -59,7 +61,7 @@ public class Card : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Collider2D targetObject = Physics2D.OverlapPoint(mousePosition);
-            if (targetObject)
+            if (targetObject && targetObject.CompareTag("Card"))
             {
                 SelectedCard = targetObject.transform.gameObject;
                 offset = SelectedCard.transform.position - mousePosition;
@@ -115,21 +117,25 @@ public class Card : MonoBehaviour
             }
             else
             {
-                StartCoroutine(CardReturn());
+                //StartCoroutine(CardReturn());
+                for (int i = 0; i < 4; i++)
+                {
+                    rb.velocity = (startpoint - SelectedCard.transform.position);
+                }
             }
         }
     }
 
     //возвращение карты в нули.
-    IEnumerator CardReturn()
-    {
-        while (SelectedCard.transform.position != startpoint)
-        {
-                SelectedCard.transform.position = Vector3.Lerp(SelectedCard.transform.position, startpoint, (float)0.5);
-        }
-        SelectedCard.transform.rotation = Quaternion.Euler(0, 0, 0);
-        SelectedCard.transform.localScale = new Vector3((float)0.5, (float)0.5, (float)1);
-        SelectedCard = null;
-        yield return new WaitForEndOfFrame();
-    }
+    //IEnumerator CardReturn()
+    //{
+    //    while (SelectedCard.transform.position != startpoint)
+    //    {
+    //            SelectedCard.transform.position = Vector3.Lerp(SelectedCard.transform.position, startpoint, (float)0.5);
+    //    }
+    //    SelectedCard.transform.rotation = Quaternion.Euler(0, 0, 0);
+    //    SelectedCard.transform.localScale = new Vector3((float)0.5, (float)0.5, (float)1);
+    //    SelectedCard = null;
+    //    yield return new WaitForEndOfFrame();
+    //}
 }
