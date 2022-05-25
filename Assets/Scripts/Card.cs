@@ -22,7 +22,7 @@ public class Card : MonoBehaviour
 
     void Start()
     {
-        startpoint = new Vector3(0, 0, 0);
+        startpoint = GameObject.FindWithTag("Respawn").transform.position; ;
         mainpanel = GameObject.FindWithTag("Game_Panel");
         mainscript = mainpanel.GetComponent<Game>();
         rb = this.gameObject.GetComponent<Rigidbody2D>();
@@ -117,25 +117,19 @@ public class Card : MonoBehaviour
             }
             else
             {
-                //StartCoroutine(CardReturn());
-                for (int i = 0; i < 4; i++)
-                {
-                    rb.velocity = (startpoint - SelectedCard.transform.position);
-                }
+                //задание карте движения к спавнеру.
+                rb.velocity = (startpoint - SelectedCard.transform.position);
+                //сброс размеров и вращения карты, отмена выбора.
+                SelectedCard.transform.rotation = Quaternion.Euler(0, 0, 0);
+                SelectedCard.transform.localScale = new Vector3((float)0.5, (float)0.5, (float)1);
+                SelectedCard = null;
             }
-        }
-    }
+        }  
 
-    //возвращение карты в нули.
-    //IEnumerator CardReturn()
-    //{
-    //    while (SelectedCard.transform.position != startpoint)
-    //    {
-    //            SelectedCard.transform.position = Vector3.Lerp(SelectedCard.transform.position, startpoint, (float)0.5);
-    //    }
-    //    SelectedCard.transform.rotation = Quaternion.Euler(0, 0, 0);
-    //    SelectedCard.transform.localScale = new Vector3((float)0.5, (float)0.5, (float)1);
-    //    SelectedCard = null;
-    //    yield return new WaitForEndOfFrame();
-    //}
+         //действия при возвращении карты в нули.
+         if (Vector3.Distance(rb.position, startpoint) <= 0.1f)
+         {
+                rb.velocity = Vector3.zero;
+         }
+    }
 }
