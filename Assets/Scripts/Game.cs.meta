@@ -3,7 +3,13 @@ guid: d9d6533bcf57e924893c733cef7a1046
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Gold_Number: {instanceID: 0}
+  - Population_Number: {instanceID: 0}
+  - LeftDescription: {instanceID: 0}
+  - RightDescription: {instanceID: 0}
+  - HideButton: {instanceID: 0}
+  - RevealButton: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

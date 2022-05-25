@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class Game : MonoBehaviour
 {
@@ -21,8 +22,8 @@ public class Game : MonoBehaviour
     {
         Gold = Starter_Gold;
         Population = Starter_Population;
-        Gold_Number.text = "«лато: " + Gold;
-        Population_Number.text = "ƒворы: " + Population;
+        Gold_Number.text = Gold.ToString();
+        Population_Number.text = Population.ToString();
         LeftDescription.gameObject.SetActive(false);
         RightDescription.gameObject.SetActive(false);
         RevealButton.SetActive(false);
@@ -30,8 +31,8 @@ public class Game : MonoBehaviour
 
     void Update()
     {
-        Gold_Number.text = "«лато: " + Gold;
-        Population_Number.text = "ƒворы: " + Population;
+        Gold_Number.text = Gold.ToString();
+        Population_Number.text = Population.ToString();
     }
 
     //функции, мен€ющие ключевые значени€.
