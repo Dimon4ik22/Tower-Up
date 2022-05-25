@@ -8,6 +8,8 @@ TagManager:
   - Right_Choice
   - Card
   - Game_Panel
+  - Blur
+  - Selector
   layers:
   - Default
   - TransparentFX

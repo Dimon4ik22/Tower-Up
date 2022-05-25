@@ -14,6 +14,7 @@ public class Game : MonoBehaviour
     public TextMeshProUGUI Population_Number;
     public TextMeshProUGUI LeftDescription;
     public TextMeshProUGUI RightDescription;
+    public GameObject Blur;
     public GameObject HideButton;
     public GameObject RevealButton;
     private GameObject CurrentCard;
@@ -22,17 +23,18 @@ public class Game : MonoBehaviour
     {
         Gold = Starter_Gold;
         Population = Starter_Population;
-        Gold_Number.text = Gold.ToString();
-        Population_Number.text = Population.ToString();
+        Gold_Number.text = "«лато: " + Gold;
+        Population_Number.text = "ƒворы: " + Population;
         LeftDescription.gameObject.SetActive(false);
         RightDescription.gameObject.SetActive(false);
         RevealButton.SetActive(false);
+        Blur.SetActive(false);
     }
 
     void Update()
     {
-        Gold_Number.text = Gold.ToString();
-        Population_Number.text = Population.ToString();
+        Gold_Number.text = "" + Gold;
+        Population_Number.text = "" + Population;
     }
 
     //функции, мен€ющие ключевые значени€.
@@ -50,11 +52,13 @@ public class Game : MonoBehaviour
     {
         LeftDescription.text = desc;
         LeftDescription.gameObject.SetActive(check);
+        Blur.SetActive(check);
     }
     public void ShowRight(string desc, bool check)
     {
         RightDescription.text = desc;
         RightDescription.gameObject.SetActive(check);
+        Blur.SetActive(check);
     }
 
     //функции скрыти€/возвращени€ карты
