@@ -21,11 +21,18 @@ public class Game : MonoBehaviour
     private float Population;
     private GameObject CurrentCard;
     public Image FillKingdom;
-
+    public float Starter_WarPoints;
+    public float Starter_TehnoPoints;
+    private float WarPoints;
+    private float TechnoPoints;
+    public Image FillWar;
+    public Image FillTechno;
     void Start()
     {
         Gold = Starter_Gold;
         Population = Starter_Population;
+        TechnoPoints = Starter_TehnoPoints;
+        WarPoints = Starter_WarPoints;
         Gold_Number.text = "" + Gold;
         Population_Number.text = "" + Population;
         LeftDescription.gameObject.SetActive(false);
@@ -41,6 +48,8 @@ public class Game : MonoBehaviour
         Gold_Number.text = "" + Gold;
         Population_Number.text = "" + Population;
         FillKingdom.fillAmount = Population / 100;
+        FillWar.fillAmount = WarPoints / 100;
+        FillTechno.fillAmount = TechnoPoints / 100;
     }
 
     //функции, мен€ющие ключевые значени€.
@@ -51,6 +60,14 @@ public class Game : MonoBehaviour
     public void ChangePopulation(float PValue)
     {
         Population += + PValue;
+    }
+    public void ChangeWarPoints(float WValue)
+    {
+        WarPoints += +WValue;
+    }
+    public void ChangeTehnoPoints(float TValue)
+    {
+        TechnoPoints += +TValue;
     }
 
     //фунцкии показа описаний.

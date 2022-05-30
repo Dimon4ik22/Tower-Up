@@ -19,6 +19,10 @@ public class Card : MonoBehaviour
     private Vector3 offset;
     private Vector3 cardpoint;
     private Rigidbody2D rb;
+    public float War_Effect_Right;
+    public float War_Effect_Left;
+    public float Tech_Effect_Right;
+    public float Tech_effect_Left;
 
     void Start()
     {
@@ -71,7 +75,7 @@ public class Card : MonoBehaviour
         //перемещение карты за курсором.
         if (SelectedCard)
         {
-            SelectedCard.transform.localScale = new Vector3((float)0.4, (float)0.4, (float)1);
+            SelectedCard.transform.localScale = new Vector3((float)0.5, (float)0.5, (float)1);
             SelectedCard.transform.position = mousePosition + offset;
             SelectedCard.transform.rotation = Quaternion.Euler(0, 0, SelectedCard.transform.position.x * -5);
         }
@@ -104,6 +108,8 @@ public class Card : MonoBehaviour
                 Debug.Log("So you have chosen Left!");
                 mainscript.ChangeGold(Gold_Effect_Left);
                 mainscript.ChangePopulation(Population_Effect_Left);
+                mainscript.ChangeWarPoints(War_Effect_Left);
+                mainscript.ChangeTehnoPoints(Tech_effect_Left);
                 mainscript.ShowLeft(Left_Desc, false);
                 Destroy(SelectedCard);
             }
@@ -112,6 +118,8 @@ public class Card : MonoBehaviour
                 Debug.Log("So you have chosen Right!");
                 mainscript.ChangeGold(Gold_Effect_Right);
                 mainscript.ChangePopulation(Population_Effect_Right);
+                mainscript.ChangeWarPoints(War_Effect_Right);
+                mainscript.ChangeTehnoPoints(Tech_Effect_Right);
                 mainscript.ShowRight(Right_Desc, false);
                 Destroy(SelectedCard);
             }
