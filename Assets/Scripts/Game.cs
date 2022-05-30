@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class Game : MonoBehaviour
 {
-    private float Gold;
-    private float Population;
     public float Starter_Gold;
     public float Starter_Population;
     public TextMeshProUGUI Gold_Number;
@@ -17,14 +15,16 @@ public class Game : MonoBehaviour
     public GameObject Blur;
     public GameObject HideButton;
     public GameObject RevealButton;
+    private float Gold;
+    private float Population;
     private GameObject CurrentCard;
 
     void Start()
     {
         Gold = Starter_Gold;
         Population = Starter_Population;
-        Gold_Number.text = "«лато: " + Gold;
-        Population_Number.text = "ƒворы: " + Population;
+        Gold_Number.text = "" + Gold;
+        Population_Number.text = "" + Population;
         LeftDescription.gameObject.SetActive(false);
         RightDescription.gameObject.SetActive(false);
         RevealButton.SetActive(false);
