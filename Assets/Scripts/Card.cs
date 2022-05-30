@@ -73,7 +73,7 @@ public class Card : MonoBehaviour
         {
             SelectedCard.transform.localScale = new Vector3((float)0.4, (float)0.4, (float)1);
             SelectedCard.transform.position = mousePosition + offset;
-            SelectedCard.transform.rotation = Quaternion.Euler(0, 0, SelectedCard.transform.position.x * 5);
+            SelectedCard.transform.rotation = Quaternion.Euler(0, 0, SelectedCard.transform.position.x * -5);
         }
 
         //отображение описания.
