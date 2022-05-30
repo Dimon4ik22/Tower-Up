@@ -10,6 +10,7 @@ TagManager:
   - Game_Panel
   - Blur
   - Selector
+  - BottomIcons
   layers:
   - Default
   - TransparentFX

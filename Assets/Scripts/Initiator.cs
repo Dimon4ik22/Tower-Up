@@ -8,6 +8,7 @@ public class Initiator : MonoBehaviour
     public GameObject[] Choise;
     public GameObject Blur;
     public GameObject Clicker_Text;
+    public GameObject ClickerBar;
     public float MinCardNum;
     public float MaxCardNum;
     public float Clicker;
@@ -15,8 +16,15 @@ public class Initiator : MonoBehaviour
     private float SpawnNumber;
     private float CardNumber = 0;
     private GameObject ActiveSpawner;
+    private Game mainscript;
+    private GameObject mainpanel;
 
     //Запуск политических карт.
+    public void Start()
+    {
+        mainpanel = GameObject.FindWithTag("Game_Panel");
+        mainscript = mainpanel.GetComponent<Game>();
+    }
     public void SpawnPol()
     {
         ActiveSpawner = Spawners[0];
@@ -26,6 +34,8 @@ public class Initiator : MonoBehaviour
             BT.SetActive(false);
         }
         Clicker_Text.SetActive(true);
+        ClickerBar.SetActive(true);
+        mainscript.HideUi(false);
     }
 
     //Запуск военных карт.
@@ -96,6 +106,8 @@ public class Initiator : MonoBehaviour
             ActiveSpawner.SetActive(true);
             Blur.SetActive(false);
             Clicker_Text.SetActive(false);
+            ClickerBar.SetActive(false);
+            mainscript.HideUi(true);
         }
     }
 }

@@ -99,9 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77d3c780d7770d9499e5698e6233bab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Gold_Effect_Right: -10
+  Gold_Effect_Right: -3
   Population_Effect_Right: -15
-  Gold_Effect_Left: 140
+  Gold_Effect_Left: 5
   Population_Effect_Left: 10
   Right_Desc: "\u0417\u0430\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043F\u043E\u0441\u0435\u043B\u0435\u043D\u0446\u0435\u0432
     \u0440\u0430\u0431\u043E\u0442\u0430\u0442\u044C \u0432 Unity."

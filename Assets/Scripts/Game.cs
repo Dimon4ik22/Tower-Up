@@ -27,6 +27,9 @@ public class Game : MonoBehaviour
     private float TechnoPoints;
     public Image FillWar;
     public Image FillTechno;
+    public Image a;
+    public Image b;
+    public Image c;
     void Start()
     {
         Gold = Starter_Gold;
@@ -102,5 +105,14 @@ public class Game : MonoBehaviour
         CurrentCard.GetComponent<Collider2D>().enabled = true;
         RevealButton.SetActive(false);
         HideButton.SetActive(true);
+    }
+    public void HideUi(bool check)
+    {
+        a.enabled = check;
+        b.enabled = check;
+        c.enabled = check;
+        FillKingdom.enabled = check;
+        FillTechno.enabled = check;
+        FillWar.enabled = check;
     }
 }

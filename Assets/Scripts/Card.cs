@@ -5,9 +5,13 @@ using UnityEngine;
 public class Card : MonoBehaviour
 {
     public float Gold_Effect_Right;
-    public float Population_Effect_Right;
     public float Gold_Effect_Left;
+    public float Population_Effect_Right;
     public float Population_Effect_Left;
+    public float War_Effect_Right;
+    public float War_Effect_Left;
+    public float Tech_Effect_Right;
+    public float Tech_effect_Left;
     public string Right_Desc;
     public string Left_Desc;
     private Game mainscript;
@@ -19,10 +23,6 @@ public class Card : MonoBehaviour
     private Vector3 offset;
     private Vector3 cardpoint;
     private Rigidbody2D rb;
-    public float War_Effect_Right;
-    public float War_Effect_Left;
-    public float Tech_Effect_Right;
-    public float Tech_effect_Left;
 
     void Start()
     {
