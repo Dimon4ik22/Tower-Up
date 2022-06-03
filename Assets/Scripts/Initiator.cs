@@ -12,6 +12,7 @@ public class Initiator : MonoBehaviour
     public GameObject Clicker_Text;
     public GameObject ClickerBar;
     public GameObject ClickerCard;
+    public GameObject GameOverMenu;
     public Image ClickerImage;
     public float MinCardNum;
     public float MaxCardNum;
@@ -124,5 +125,13 @@ public class Initiator : MonoBehaviour
             ClickerBar.SetActive(false);
             mainscript.HideUi(true);
         }
+    }
+
+    //Конец игры. И отображение соответствующего меню.
+    public void GameOver()
+    { 
+        ActiveSpawner.SetActive(false);
+        Blur.SetActive(true);
+        GameOverMenu.SetActive(true);
     }
 }

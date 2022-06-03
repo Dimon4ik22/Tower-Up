@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class Game : MonoBehaviour
     private float Gold;
     private float Population;
     private GameObject CurrentCard;
+    private Initiator Init;
     public Image FillKingdom;
     public float Starter_WarPoints;
     public float Starter_TehnoPoints;
@@ -44,6 +46,7 @@ public class Game : MonoBehaviour
         Blur.SetActive(false);
         LeftPanelDesc.SetActive(false);
         RightPanelDesc.SetActive(false);
+        Init = GameObject.FindWithTag("Game_Panel").GetComponent<Initiator>();
     }
 
     void Update()
@@ -53,6 +56,10 @@ public class Game : MonoBehaviour
         FillKingdom.fillAmount = Population / 100;
         FillWar.fillAmount = WarPoints / 100;
         FillTechno.fillAmount = TechnoPoints / 100;
+        if (Population <= 0)
+        {
+            Init.GameOver();
+        }
     }
 
     //функции, меняющие ключевые значения.
@@ -89,7 +96,7 @@ public class Game : MonoBehaviour
         RightPanelDesc.SetActive(check);
     }
 
-    //функции скрытия/возвращения карты
+    //функции скрытия/возвращения карты.
     public void HideCard()
     { 
         CurrentCard = GameObject.FindWithTag("Card");
@@ -114,5 +121,17 @@ public class Game : MonoBehaviour
         FillKingdom.enabled = check;
         FillTechno.enabled = check;
         FillWar.enabled = check;
+    }
+
+    //Перезапуск игры.
+    public void Retry()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    //Выход из игры.
+    public void Exit()
+    {
+        Application.Quit();
     }
 }
