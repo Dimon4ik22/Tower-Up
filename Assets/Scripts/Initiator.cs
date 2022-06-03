@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Initiator : MonoBehaviour
 {
     public GameObject[] Spawners;
     public GameObject[] Choise;
+    public Sprite[] ClickerCards;
     public GameObject Blur;
     public GameObject Clicker_Text;
     public GameObject ClickerBar;
+    public GameObject ClickerCard;
+    public Image ClickerImage;
     public float MinCardNum;
     public float MaxCardNum;
     public float Clicker;
@@ -35,7 +39,9 @@ public class Initiator : MonoBehaviour
         }
         Clicker_Text.SetActive(true);
         ClickerBar.SetActive(true);
+        ClickerCard.SetActive(true);
         mainscript.HideUi(false);
+        ClickerImage.sprite = ClickerCards[0];
     }
 
     //Запуск военных карт.
@@ -48,6 +54,10 @@ public class Initiator : MonoBehaviour
             BT.SetActive(false);
         }
         Clicker_Text.SetActive(true);
+        ClickerBar.SetActive(true);
+        ClickerCard.SetActive(true);
+        mainscript.HideUi(false);
+        ClickerImage.sprite = ClickerCards[1];
     }
 
     //Запуск городских карт.
@@ -60,6 +70,10 @@ public class Initiator : MonoBehaviour
             BT.SetActive(false);
         }
         Clicker_Text.SetActive(true);
+        ClickerBar.SetActive(true);
+        ClickerCard.SetActive(true);
+        mainscript.HideUi(false);
+        ClickerImage.sprite = ClickerCards[2];
     }
 
     //Запуск технических карт.
@@ -72,6 +86,10 @@ public class Initiator : MonoBehaviour
             BT.SetActive(false);
         }
         Clicker_Text.SetActive(true);
+        ClickerBar.SetActive(true);
+        ClickerCard.SetActive(true);
+        mainscript.HideUi(false);
+        ClickerImage.sprite = ClickerCards[3];
     }
 
     //Функция подсчёта использованных карт в выбранной категории.
@@ -93,18 +111,15 @@ public class Initiator : MonoBehaviour
         }
     }
 
-    //Кликер. До сих пор не понимаю, зачем он нужен.
-    void Update()
+    //Кликер. Вызывается кнопкой в виде карты.
+    public void Click()
     {
-        if (Input.GetButtonDown("Fire1") && ActiveSpawner != null)
-        {
             Clicker_Count += 1;
-        }
-
         if (Clicker_Count == Clicker)
         {
             ActiveSpawner.SetActive(true);
             Blur.SetActive(false);
+            ClickerCard.SetActive(false);
             Clicker_Text.SetActive(false);
             ClickerBar.SetActive(false);
             mainscript.HideUi(true);
