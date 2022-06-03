@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7390883457115341354}
   - component: {fileID: 5895471913827920151}
   m_Layer: 0
-  m_Name: Card_Example
+  m_Name: GoldCard 2
   m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6307d3e56a4c1c94ba9eeb58810c101e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dff9929847122af4a894f50b521cd394, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -130,7 +130,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.83, y: 6.78}
+    oldSize: {x: 6.09, y: 8.88}
     newSize: {x: 4.83, y: 6.78}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
