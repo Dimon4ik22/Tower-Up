@@ -3,7 +3,13 @@ guid: e9f4c340107cab54e817bc16773fc037
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Blur: {instanceID: 0}
+  - Clicker_Text: {instanceID: 0}
+  - ClickerBar: {instanceID: 0}
+  - ClickerCard: {instanceID: 0}
+  - GameOverMenu: {instanceID: 0}
+  - ClickerImage: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
