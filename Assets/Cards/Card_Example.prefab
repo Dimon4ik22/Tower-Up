@@ -100,17 +100,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Gold_Effect_Right: -3
-  Population_Effect_Right: -15
   Gold_Effect_Left: 5
+  Population_Effect_Right: -15
   Population_Effect_Left: 10
-  Right_Desc: "\u0417\u0430\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043F\u043E\u0441\u0435\u043B\u0435\u043D\u0446\u0435\u0432
-    \u0440\u0430\u0431\u043E\u0442\u0430\u0442\u044C \u0432 Unity."
-  Left_Desc: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C
-    \u0447\u0438\u0442\u044B."
   War_Effect_Right: -20
   War_Effect_Left: 20
   Tech_Effect_Right: -5
   Tech_effect_Left: 10
+  Right_Desc: "\u0417\u0430\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043F\u043E\u0441\u0435\u043B\u0435\u043D\u0446\u0435\u0432
+    \u0440\u0430\u0431\u043E\u0442\u0430\u0442\u044C \u0432 Unity."
+  Left_Desc: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C
+    \u0447\u0438\u0442\u044B."
+  Bottom_Desc_R: t
+  Bottom_Desc_L: y
 --- !u!61 &7390883457115341354
 BoxCollider2D:
   m_ObjectHideFlags: 0

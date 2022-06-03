@@ -13,8 +13,10 @@ public class Game : MonoBehaviour
     public TextMeshProUGUI Population_Number;
     public TextMeshProUGUI LeftDescription;
     public TextMeshProUGUI RightDescription;
+    public TextMeshProUGUI BottomDescription;
     public GameObject LeftPanelDesc;
     public GameObject RightPanelDesc;
+    public GameObject BottomPanelDesc;
     public GameObject Blur;
     public GameObject HideButton;
     public GameObject RevealButton;
@@ -29,9 +31,9 @@ public class Game : MonoBehaviour
     private float TechnoPoints;
     public Image FillWar;
     public Image FillTechno;
-    public Image a;
-    public Image b;
-    public Image c;
+    public Image BackFillKingdom;
+    public Image BackFillTech;
+    public Image BackFillWar;
     void Start()
     {
         Gold = Starter_Gold;
@@ -42,10 +44,12 @@ public class Game : MonoBehaviour
         Population_Number.text = "" + Population;
         LeftDescription.gameObject.SetActive(false);
         RightDescription.gameObject.SetActive(false);
+        BottomDescription.gameObject.SetActive(false);
         RevealButton.SetActive(false);
         Blur.SetActive(false);
         LeftPanelDesc.SetActive(false);
         RightPanelDesc.SetActive(false);
+        BottomPanelDesc.SetActive(false);
         Init = GameObject.FindWithTag("Game_Panel").GetComponent<Initiator>();
     }
 
@@ -95,6 +99,13 @@ public class Game : MonoBehaviour
         Blur.SetActive(check);
         RightPanelDesc.SetActive(check);
     }
+    public void ShowBottom(string desc)
+    {
+        BottomDescription.text = desc;
+        BottomDescription.gameObject.SetActive(true);
+        BottomPanelDesc.SetActive(true);
+        StartCoroutine(Desc());
+    }
 
     //функции скрытия/возвращения карты.
     public void HideCard()
@@ -115,12 +126,18 @@ public class Game : MonoBehaviour
     }
     public void HideUi(bool check)
     {
-        a.enabled = check;
-        b.enabled = check;
-        c.enabled = check;
+        BackFillKingdom.enabled = check;
+        BackFillTech.enabled = check;
+        BackFillWar.enabled = check;
         FillKingdom.enabled = check;
         FillTechno.enabled = check;
         FillWar.enabled = check;
+    }
+    IEnumerator Desc()
+    {
+        yield return new WaitForSeconds(2);
+        BottomDescription.gameObject.SetActive(false);
+        BottomPanelDesc.SetActive(false);
     }
 
     //Перезапуск игры.

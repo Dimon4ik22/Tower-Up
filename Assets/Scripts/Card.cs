@@ -14,6 +14,8 @@ public class Card : MonoBehaviour
     public float Tech_effect_Left;
     public string Right_Desc;
     public string Left_Desc;
+    public string Bottom_Desc_R;
+    public string Bottom_Desc_L;
     private Game mainscript;
     private GameObject mainpanel;
     private GameObject SelectedCard;
@@ -112,6 +114,7 @@ public class Card : MonoBehaviour
                 mainscript.ChangeTehnoPoints(Tech_effect_Left);
                 mainscript.ShowLeft(Left_Desc, false);
                 Destroy(SelectedCard);
+                mainscript.ShowBottom(Bottom_Desc_L);
             }
             else if (right_choice_count >= 1)
             {
@@ -122,6 +125,7 @@ public class Card : MonoBehaviour
                 mainscript.ChangeTehnoPoints(Tech_Effect_Right);
                 mainscript.ShowRight(Right_Desc, false);
                 Destroy(SelectedCard);
+                mainscript.ShowBottom(Bottom_Desc_R);
             }
             else
             {
