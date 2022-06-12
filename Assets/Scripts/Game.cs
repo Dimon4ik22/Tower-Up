@@ -60,7 +60,7 @@ public class Game : MonoBehaviour
         FillKingdom.fillAmount = Population / 100;
         FillWar.fillAmount = WarPoints / 100;
         FillTechno.fillAmount = TechnoPoints / 100;
-        if (Population <= 0)
+        if (Population <= 0 || Gold <= 0 || TechnoPoints <=0 || WarPoints <= 0)
         {
             Init.GameOver();
         }

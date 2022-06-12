@@ -14,10 +14,11 @@ public class Initiator : MonoBehaviour
     public GameObject ClickerCard;
     public GameObject GameOverMenu;
     public Image ClickerImage;
+    public Image FillClickerImage;
     public float MinCardNum;
     public float MaxCardNum;
     public float Clicker;
-    private float Clicker_Count = 0;
+    private float Clicker_Count = 100;
     private float SpawnNumber;
     private float CardNumber = 0;
     private GameObject ActiveSpawner;
@@ -108,14 +109,15 @@ public class Initiator : MonoBehaviour
             }
             Blur.SetActive(true);
             CardNumber = 0;
-            Clicker_Count = 0;
+            Clicker_Count = 100;
         }
     }
 
     //Кликер. Вызывается кнопкой в виде карты.
     public void Click()
     {
-            Clicker_Count += 1;
+        Clicker_Count -= 20;
+        FillClickerImage.fillAmount = Clicker_Count / 100;
         if (Clicker_Count == Clicker)
         {
             ActiveSpawner.SetActive(true);
@@ -124,6 +126,7 @@ public class Initiator : MonoBehaviour
             Clicker_Text.SetActive(false);
             ClickerBar.SetActive(false);
             mainscript.HideUi(true);
+            FillClickerImage.fillAmount = 1;
         }
     }
 
