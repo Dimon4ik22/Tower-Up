@@ -135,7 +135,7 @@ public class Game : MonoBehaviour
     }
     IEnumerator Desc()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(5);
         BottomDescription.gameObject.SetActive(false);
         BottomPanelDesc.SetActive(false);
     }

@@ -1254,8 +1254,8 @@ MonoBehaviour:
   - {fileID: 7390883457115341353, guid: 8f599388d3792114fafbe9bb97797850, type: 3}
   - {fileID: 7390883457115341353, guid: 88330a4768490a24a885c32e63a1b7bc, type: 3}
   - {fileID: 7390883457115341353, guid: 62bc7852d9bc0354180603fbacce30ce, type: 3}
-  TborderUp: 1
-  TborderDown: 1
+  TborderUp: 5
+  TborderDown: 5
 --- !u!1 &618691540
 GameObject:
   m_ObjectHideFlags: 0
@@ -3770,8 +3770,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0.080002, y: 322.35492}
-  m_SizeDelta: {x: 706.16, y: 160.7099}
+  m_AnchoredPosition: {x: -5.9523, y: 346.4839}
+  m_SizeDelta: {x: 790.6111, y: 208.9678}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1309184468
 GameObject:
@@ -5441,8 +5441,8 @@ MonoBehaviour:
   - {fileID: 7390883457115341353, guid: e2afef396e5480e4d8c880a4d41ffee9, type: 3}
   - {fileID: 7390883457115341353, guid: 5f3c6307c1a34294eb3615f567025889, type: 3}
   - {fileID: 7390883457115341353, guid: e67114fb197d8934391c0538816a38b6, type: 3}
-  TborderUp: 1
-  TborderDown: 1
+  TborderUp: 5
+  TborderDown: 5
 --- !u!4 &1946759010
 Transform:
   m_ObjectHideFlags: 0
@@ -5811,8 +5811,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0.0016327, y: 322.35492}
-  m_SizeDelta: {x: 706.32, y: 160.71}
+  m_AnchoredPosition: {x: -5.9529, y: 346.48}
+  m_SizeDelta: {x: 790.61, y: 208.97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2009298238
 GameObject:
@@ -5854,8 +5854,8 @@ MonoBehaviour:
   - {fileID: 7390883457115341353, guid: 96ebf7d464978b241a21f8d1c45165ee, type: 3}
   - {fileID: 7390883457115341353, guid: 7fb066e0ae2f05644a3f6b9b1c82d2ad, type: 3}
   - {fileID: 7390883457115341353, guid: 2eaca0195bbad2848b447c339f2c5356, type: 3}
-  TborderUp: 1
-  TborderDown: 1
+  TborderUp: 5
+  TborderDown: 5
 --- !u!4 &2009298240
 Transform:
   m_ObjectHideFlags: 0
@@ -5911,8 +5911,8 @@ MonoBehaviour:
   - {fileID: 7390883457115341353, guid: a0ba51ba0a77850479f2da5677307cdc, type: 3}
   - {fileID: 7390883457115341353, guid: f61964307038773499b2386606a8be16, type: 3}
   - {fileID: 7390883457115341353, guid: 7e2f67c20efb13a4ab73e15a1666a41c, type: 3}
-  TborderUp: 1
-  TborderDown: 1
+  TborderUp: 5
+  TborderDown: 5
 --- !u!4 &2015645708
 Transform:
   m_ObjectHideFlags: 0

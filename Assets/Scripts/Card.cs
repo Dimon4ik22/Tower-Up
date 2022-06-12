@@ -5,16 +5,16 @@ using UnityEngine;
 public class Card : MonoBehaviour
 {
     public float Gold_Effect_Right;
-    public float Gold_Effect_Left;
     public float Population_Effect_Right;
-    public float Population_Effect_Left;
     public float War_Effect_Right;
-    public float War_Effect_Left;
     public float Tech_Effect_Right;
-    public float Tech_effect_Left;
     public string Right_Desc;
-    public string Left_Desc;
     public string Bottom_Desc_R;
+    public float Gold_Effect_Left;
+    public float Population_Effect_Left;
+    public float War_Effect_Left;
+    public float Tech_effect_Left;
+    public string Left_Desc;
     public string Bottom_Desc_L;
     private Game mainscript;
     private GameObject mainpanel;
