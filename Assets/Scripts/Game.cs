@@ -19,7 +19,6 @@ public class Game : MonoBehaviour
     public GameObject BottomPanelDesc;
     public GameObject Blur;
     public GameObject HideButton;
-    public GameObject RevealButton;
     private float Gold;
     private float Population;
     private GameObject CurrentCard;
@@ -45,7 +44,6 @@ public class Game : MonoBehaviour
         LeftDescription.gameObject.SetActive(false);
         RightDescription.gameObject.SetActive(false);
         BottomDescription.gameObject.SetActive(false);
-        RevealButton.SetActive(false);
         Blur.SetActive(false);
         LeftPanelDesc.SetActive(false);
         RightPanelDesc.SetActive(false);
@@ -107,22 +105,21 @@ public class Game : MonoBehaviour
         StartCoroutine(Desc());
     }
 
-    //функции скрытия/возвращения карты.
+    //функция пропуска карты.
     public void HideCard()
     { 
-        CurrentCard = GameObject.FindWithTag("Card");
-        CurrentCard.GetComponent<Renderer>().enabled = false;
-        CurrentCard.GetComponent<Collider2D>().enabled = false;
-        RevealButton.SetActive(true);
-        HideButton.SetActive(false);
+        Init.WaitForSkipCard(true);
     }
-    public void RevealCard()
+    public void SkipCard()
     {
         CurrentCard = GameObject.FindWithTag("Card");
-        CurrentCard.GetComponent<Renderer>().enabled = true;
-        CurrentCard.GetComponent<Collider2D>().enabled = true;
-        RevealButton.SetActive(false);
-        HideButton.SetActive(true);
+        Gold -= 100;
+        Destroy(CurrentCard);
+        Init.WaitForSkipCard(false);
+    }
+    public void CancelSkipCard()
+    {
+        Init.WaitForSkipCard(false);
     }
     public void HideUi(bool check)
     {

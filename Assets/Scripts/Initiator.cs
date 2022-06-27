@@ -13,6 +13,7 @@ public class Initiator : MonoBehaviour
     public GameObject ClickerBar;
     public GameObject ClickerCard;
     public GameObject GameOverMenu;
+    public GameObject WaitForSkipCardMenu;
     public Image ClickerImage;
     public Image FillClickerImage;
     public float MinCardNum;
@@ -136,5 +137,9 @@ public class Initiator : MonoBehaviour
         ActiveSpawner.SetActive(false);
         Blur.SetActive(true);
         GameOverMenu.SetActive(true);
+    }
+    public void WaitForSkipCard(bool check)
+    {
+        WaitForSkipCardMenu.SetActive(check);
     }
 }
